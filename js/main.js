@@ -1,6 +1,7 @@
 $(()=> {
     $("#boxMain").hide();
     $(".titleButton").hide();
+
     $("#titleSubName").css({
       transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
       "font-size": "0px"
@@ -110,11 +111,29 @@ $(()=> {
           "-webkit-transform": "perspective( 800px ) rotateY(0deg) rotateZ(0deg)",
       });
       $("#boxMain").delay(2000).hide()
-      $(".indexContainer").animate({
-          
-      });
-    })
+      setTimeout(()=>{
+        $(".indexContainer").css({
+          "height": "0vh",
+          transition: "all 2s ease-in"
+        });
+      }, 2500)
+      setTimeout(()=>{
+        $(".whoAmI").css({
+          "opacity":"1"
+        });
+      }, 4500)
+      setTimeout(()=>{
+        $(".projectsContainer").css({
+          "opacity":"1"
+        });
+      }, 4800)
+      setTimeout(()=>{
+        $(".contactMe").css({
+          "opacity":"1"
+        });
+      }, 5300)
 
+    })
 
 
 });

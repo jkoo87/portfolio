@@ -176,10 +176,53 @@ body {
   background-color: white;
 }
 .titleButton:hover{
-  background-color: skyblue;
+  background-color: gold;
 }
 
 
+/*Main Page*/
+.mainContainer{
+  background: url("./img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  /*background-color: skyblue;*/
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow: scroll;
+}
+.mainContainer > *{
+  display: flex;
+  flex-direction: row;
+  width: 33.33%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: "all 2s linear"
+}
 
+.whoAmI{
+  background-color: rgba(192,192,192,0.3);
+  left: -500px;
+}
 
-/*Title page-background motion box*/
+.whoAmI:hover {
+  opacity: 1;
+    background-color: rgba(192,192,192,0.8);
+}
+.projectsContainer{
+  background-color: rgba(192,192,192,0.3);
+}
+.projectsContainer:hover{
+  background-color: rgba(192,192,192,0.8);
+}
+.contactMe{
+  background-color: rgba(192,192,192,0.3);
+}
+.contactMe:hover{
+  background-color: rgba(192,192,192,0.8);
+}
