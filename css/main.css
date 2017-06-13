@@ -9,7 +9,8 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #ffa500;
+  background-color: black;
+  /*background-color: #ffa500;*/
   height: 100vh;
   margin: 0;
   position: relative;
@@ -25,7 +26,8 @@ body {
   text-align: center;
   font-size: 0px;
   color: white;
-  text-shadow: 2px 2px 4px black;
+  text-shadow: -2px -1px 1px gold;
+  /*text-shadow: 2px 2px 4px black;*/
   animation: initialMotion 1s ease-in 3;
   z-index: 1;
 }
@@ -33,7 +35,7 @@ body {
 
 .titleContainer:first-child {
     padding: 0px 30px;
-    font-family: 'Sigmar One', cursive;
+    font-family: 'Crete Round', serif;
 }
 
 #myName{
@@ -49,8 +51,8 @@ body {
   }
   to {
     font-size: 0px;
-    border-top: 10px solid #8c3a1e;
-    border-bottom: 10px solid #cc4949;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
   }
 }
 

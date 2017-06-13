@@ -8,7 +8,7 @@ $(()=> {
     });
     setTimeout(()=> {
       $(".titleContainer").css({
-        "font-size": "60px",
+        "font-size": "50px",
         transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
         transform: "perspective( 500px ) rotateY(-50deg) rotateX(-30deg)",
         "-webkit-transform": " perspective( 500px ) rotateY(-50deg) rotateX(-30deg)",
@@ -42,7 +42,7 @@ $(()=> {
       setTimeout(resetFlip, 1000)
       setTimeout(()=>{
         $("#titleSubName").css({
-          "font-size": "50px"
+          "font-size": "40px"
         })
       },1000);
     }, 5500);
@@ -62,12 +62,12 @@ $(()=> {
       });
       setTimeout(()=>{
         $("#myName").css({
-          "font-size": "100px"
+          "font-size": "80px"
         });
       }, 1000)
       setTimeout(()=>{
         $(".titleContainer").css({
-          "min-height": "650px"
+          "min-height": "450px"
         });
       }, 1500)
       // setTimeout(()=>{
@@ -119,16 +119,19 @@ $(()=> {
       }, 2500)
       setTimeout(()=>{
         $(".whoAmI").css({
+          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
           "opacity":"1"
         });
       }, 4500)
       setTimeout(()=>{
         $(".projectsContainer").css({
+          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
           "opacity":"1"
         });
       }, 4800)
       setTimeout(()=>{
         $(".contactMe").css({
+          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
           "opacity":"1"
         });
       }, 5300)
