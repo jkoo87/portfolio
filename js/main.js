@@ -15,8 +15,11 @@ $(()=> {
         "border-top": "7px solid",
         "border-bottom": "7px solid",
       });
-
-    }, 3100);
+      $("#titleName").css({
+        transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
+        "font-size": "50px"
+      });
+    }, 2000);
 
 
     setTimeout(()=>{
@@ -26,7 +29,7 @@ $(()=> {
         "-webkit-transition-duration": "8s",
         "transition-duration": "8s"
       });
-    }, 4000);
+    }, 3000);
 
 
 
@@ -34,7 +37,6 @@ $(()=> {
       $("#titleName").removeClass("flip");
     }
     let fulStack='<span>FULL-STACK </span><span> </span></br><span>WEB</span><span> </span><span>DEVELOPER</span>'
-
 
 
     setTimeout(()=>{
@@ -45,7 +47,7 @@ $(()=> {
           "font-size": "40px"
         })
       },1000);
-    }, 5500);
+    }, 3500);
 
     setTimeout(()=> {
       $("#titleName").addClass("flip").text("My Name");
@@ -67,12 +69,9 @@ $(()=> {
       }, 1000)
       setTimeout(()=>{
         $(".titleContainer").css({
-          "min-height": "450px"
+          "min-height": "430px"
         });
       }, 1500)
-      // setTimeout(()=>{
-      //   $(".titleButton").show()
-      // }, 1900)
       setTimeout(()=>{
         $(".titleContainer").css({
           transform: "perspective( 800px ) rotateY(400deg) rotateZ(-2deg)",
@@ -83,7 +82,7 @@ $(()=> {
 
         $(fulStack).hide().appendTo("#subName").each(function(i) {
             $(this).delay(100 * i).fadeIn('slow').addClass('smoke').css({
-                  color: "#932929"
+                  color: "#CE2121"
             });
         });
       }, 2500)
@@ -95,13 +94,14 @@ $(()=> {
           "font-size": "30px"
         });
       }, 3500)
-    }, 9000);
+    }, 6000);
 
-    $(".titleButton").click(()=>{
-      $(".titleButton, #subName, #myName, #titleSubName, #titleName"  ).css({
+    $(".titleButton, .skipButton").click(()=>{
+      $(".titleButton, .skipButton, #subName, #myName, #titleSubName, #titleName" ).css({
           "font-size": "0px"
       });
       $(".titleButton").hide()
+      $(".skipButton").hide()
       $(".titleContainer").css({
           "overflow": "hidden",
           "min-height": "0px",
@@ -110,32 +110,35 @@ $(()=> {
           transform: "perspective( 800px ) rotateY(0deg) rotateZ(0deg)",
           "-webkit-transform": "perspective( 800px ) rotateY(0deg) rotateZ(0deg)",
       });
-      $("#boxMain").delay(2000).hide()
+      $("#boxMain").hide()
+
       setTimeout(()=>{
         $(".indexContainer").css({
           "height": "0vh",
           transition: "all 2s ease-in"
         });
-      }, 2500)
+      }, 500)
+
+      $(".about, .projectsContainer, .contactMe").css({
+        "opacity":"1",
+                  "font-size": "20px"
+      });
+
       setTimeout(()=>{
-        $(".whoAmI").css({
-          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
-          "opacity":"1"
+        $(".about > div").css({
+          "font-size": "20px"
         });
       }, 4500)
       setTimeout(()=>{
-        $(".projectsContainer").css({
-          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
-          "opacity":"1"
+        $(".projectsContainer > div").css({
+          "font-size": "20px"
         });
       }, 4800)
       setTimeout(()=>{
-        $(".contactMe").css({
-          transition: "all 2.5s cubic-bezier(0,-0.1, 0, 1.06)",
-          "opacity":"1"
+        $(".contactMe > div").css({
+          "font-size": "20px"
         });
       }, 5300)
-
     })
 
 

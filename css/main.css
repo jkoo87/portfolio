@@ -10,7 +10,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
-  /*background-color: #ffa500;*/
   height: 100vh;
   margin: 0;
   position: relative;
@@ -21,21 +20,21 @@ body {
   position: relative;
   border-top: 5px double white;
   border-bottom: 5px double white;
-  min-width: 300px;
+  min-width: 320px;
   min-height: 0px;
   text-align: center;
   font-size: 0px;
   color: white;
-  text-shadow: -2px -1px 1px gold;
-  /*text-shadow: 2px 2px 4px black;*/
+  text-shadow: -2px -1px 1px brown;
   animation: initialMotion 1s ease-in 3;
   z-index: 1;
+  font-family: 'Crete Round', serif;
 }
 
 
-.titleContainer:first-child {
+#titleName {
     padding: 0px 30px;
-    font-family: 'Crete Round', serif;
+    font-size: 0px;
 }
 
 #myName{
@@ -145,15 +144,15 @@ body {
   background: #101010;
 }
 #top {
-  transform: rotateX(-90deg) translateY(-175px);
-  -webkit-transform: rotateX(-90deg) translateY(-175px);
+  transform: rotateX(-0deg) translateY(-275px);
+  -webkit-transform: rotateX(-90deg) translateY(-275px);
   transform-origin: top;
   -webkit-transform-origin: top;
   background: black;
 }
 #bottom {
-  transform: rotateX(-90deg) translateY(175px);
-  -webkit-transform: rotateX(-90deg) translateY(175px);
+  transform: rotateX(-90deg) translateY(75px);
+  -webkit-transform: rotateX(-90deg) translateY(75px);
   transform-origin: bottom;
   -webkit-transform-origin: bottom;
   background: #101010;
@@ -170,9 +169,18 @@ body {
   }
 }
 
-.titleButton{
+.titleButton, .skipButton{
   text-decoration: none;
   font-size: 0px;
+  padding: 0 30px;
+  border-radius: 20px;
+  background-color: white;
+}
+.skipButton{
+  bottom: 50px;
+  font-size: 20px;
+  position: absolute;
+  text-decoration: none;
   padding: 0 30px;
   border-radius: 20px;
   background-color: white;
@@ -184,8 +192,9 @@ body {
 
 /*Main Page*/
 .mainContainer{
-  background: url("./img/background.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-color: black;
+  /*background: url("./img/background.jpg") no-repeat center center fixed;*/
+  /*background-size: cover;*/
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
@@ -207,24 +216,36 @@ body {
   transition: "all 2s linear"
 }
 
-.whoAmI{
-  background-color: rgba(192,192,192,0.3);
-  left: -500px;
+.mainContainer > * > *{
+  color: white;
+  font-size: 0px;
+  text-align: center;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  min-width: 30%;;
+  transition: all 2.5s cubic-bezier(0,-0.1, 0, 1.06);
 }
 
-.whoAmI:hover {
-  opacity: 1;
-    background-color: rgba(192,192,192,0.8);
+
+.about{
+  /*background: url("./img/background1.jpg") no-repeat center center fixed;*/
+  height: 100vh;
+
+}
+
+.about:hover {
+
 }
 .projectsContainer{
-  background-color: rgba(192,192,192,0.3);
+  /*background: url("./img/projectBackground.jpg") no-repeat center center fixed;*/
+
 }
 .projectsContainer:hover{
-  background-color: rgba(192,192,192,0.8);
+
 }
 .contactMe{
-  background-color: rgba(192,192,192,0.3);
+  /*background-color: rgba(192,192,192,0.3);*/
 }
 .contactMe:hover{
-  background-color: rgba(192,192,192,0.8);
+  /*background-color: rgba(192,192,192,0.8);*/
 }
