@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  transition: 1s ease;
 }
 
 /*Title page*/
@@ -17,6 +16,7 @@ body {
 }
 
 .titleContainer{
+  visibility: hidden;
   position: relative;
   border-top: 5px double white;
   border-bottom: 5px double white;
@@ -29,12 +29,14 @@ body {
   animation: initialMotion 1s ease-in 3;
   z-index: 1;
   font-family: 'Crete Round', serif;
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
 }
 
 
 #titleName {
     padding: 0px 30px;
     font-size: 0px;
+    transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
 }
 
 #myName{
@@ -175,31 +177,30 @@ body {
   padding: 0 30px;
   border-radius: 20px;
   background-color: white;
+  transition: all 1s ease;
 }
 .skipButton{
-  bottom: 50px;
+  bottom: 10%;
   font-size: 20px;
   position: absolute;
   text-decoration: none;
   padding: 0 30px;
   border-radius: 20px;
   background-color: white;
+  visibility: hidden;
 }
-.titleButton:hover{
-  background-color: gold;
+.titleButton:hover, .skipButton:hover {
+  background-color: #4273d6;
 }
 
 
 /*Main Page*/
 .mainContainer{
   background-color: black;
-  /*background: url("./img/background.jpg") no-repeat center center fixed;*/
-  /*background-size: cover;*/
   display: flex;
   flex-direction: row;
   justify-content:flex-start;
   align-items: center;
-  /*background-color: skyblue;*/
   height: 100vh;
   margin: 0;
   position: relative;
@@ -213,7 +214,7 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: "all 2s linear"
+  transition: all 1s linear;
 }
 
 .mainContainer > * > *{
@@ -222,30 +223,30 @@ body {
   text-align: center;
   border-top: 5px solid white;
   border-bottom: 5px solid white;
-  min-width: 30%;;
-  transition: all 2.5s cubic-bezier(0,-0.1, 0, 1.06);
+  min-width: 20%;
+  transition: all 1.5s cubic-bezier(1,-0.01, 0, 1.45);
 }
 
 
 .about{
-  /*background: url("./img/background1.jpg") no-repeat center center fixed;*/
-  height: 100vh;
+
 
 }
 
 .about:hover {
+  background-color: green;
 
+  /*transition: all 2.0s cubic-bezier(1,-0.01, 0, 1.45);*/
 }
 .projectsContainer{
-  /*background: url("./img/projectBackground.jpg") no-repeat center center fixed;*/
 
 }
 .projectsContainer:hover{
+  background-color: skyblue;
 
 }
 .contactMe{
-  /*background-color: rgba(192,192,192,0.3);*/
 }
 .contactMe:hover{
-  /*background-color: rgba(192,192,192,0.8);*/
+  background-color: gold;
 }
