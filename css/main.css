@@ -170,7 +170,9 @@ body {
     -webkit-transform: rotateY(360deg) rotateX(-360deg)  ;
   }
 }
-
+.titleButton{
+  text-shadow: -2px -1px 1px #000066;
+}
 .titleButton, .skipButton{
   text-decoration: none;
   font-size: 0px;
@@ -178,16 +180,15 @@ body {
   border-radius: 20px;
   background-color: white;
   transition: all 1s ease;
+  color: #0066cc;
+
 }
 .skipButton{
   bottom: 10%;
   font-size: 20px;
   position: absolute;
-  text-decoration: none;
-  padding: 0 30px;
-  border-radius: 20px;
-  background-color: white;
-  visibility: hidden;
+  right:43%;
+  opacity: 0;
 }
 .titleButton:hover, .skipButton:hover {
   background-color: #4273d6;
@@ -201,53 +202,100 @@ body {
   flex-direction: row;
   justify-content:flex-start;
   align-items: center;
-  height: 100vh;
-  margin: 0;
   position: relative;
-  overflow: scroll;
 }
 
 .mainContainer > *{
   display: flex;
   flex-direction: row;
-  width: 33.33%;
+  width: 33.3333%;
   height: 100vh;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: all 1s linear;
+  position: relative;
 }
 
+
 .mainContainer > * > *{
-  color: white;
+  vertical-align: middle;
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 1px 1px white;
   font-size: 0px;
   text-align: center;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
   min-width: 20%;
   transition: all 1.5s cubic-bezier(1,-0.01, 0, 1.45);
+}
+.menuButton{
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px grey;
+  top: 3%;
+  left: 3%;
+  width: 50px;
+  height: 30px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  border: 3px ridge;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0 10px;
+  z-index: 1;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.menuButton:hover{
+  font-size: 25px;
+  border: 5px solid #871938;
+  padding: 5px;
+  width: 80px;
 }
 
 
 .about{
-
-
+  background: url("./img/aboutBackground.jpg")no-repeat center;
+  background-size: cover;
 }
 
-.about:hover {
-  background-color: green;
-
-  /*transition: all 2.0s cubic-bezier(1,-0.01, 0, 1.45);*/
-}
-.projectsContainer{
+.about > a:hover {
+  animation: textEffect 1s ease-in infinite;
 
 }
-.projectsContainer:hover{
-  background-color: skyblue;
+.projectsContainer {
+  background: url("./img/projectBackground1.jpg")no-repeat center;
+  background-size: cover;
+}
+.projectsContainer > a {
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px black;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+.projectsContainer > a:hover{
+  /*background-color: skyblue;*/
+  animation: textEffect 1s ease-in infinite;
 
 }
 .contactMe{
-}
-.contactMe:hover{
   background-color: gold;
 }
+.contactMe > a:hover{
+  /*background-color: gold;*/
+  animation: textEffect 1s ease-in infinite;
+}
+
+@keyframes textEffect{
+  from {
+    border-top: 5px double white;
+    border-bottom: 5px double white;
+  }
+  to {
+    border-top: 10px solid brown;
+    border-bottom: 10px solid brown;
+  }

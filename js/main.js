@@ -1,4 +1,5 @@
 $(()=> {
+
     $("#mainPage").hide();
     $("#boxMain").hide();
     $(".titleButton").hide();
@@ -9,10 +10,9 @@ $(()=> {
     $(".titleContainer").css({
       "visibility": "visible"
     });
+    $(".skipButton").animate( { "opacity": 1} , 500 )
+
     setTimeout(()=> {
-      $(".skipButton").css({
-        "visibility": "visible"
-      })
       $(".titleContainer").css({
         "font-size": "50px",
         transform: "perspective( 500px ) rotateY(-50deg) rotateX(-30deg)",
@@ -96,7 +96,7 @@ $(()=> {
           transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
           "font-size": "30px"
         });
-        $(".skipButton").hide()
+        $(".skipButton").animate( { "opacity": 0} , 500 )
       }, 3500)
     }, 6000);
 
@@ -107,7 +107,6 @@ $(()=> {
       $(".titleButton").hide()
       $(".skipButton").hide()
       $(".titleContainer").css({
-          "overflow": "hidden",
           "min-height": "0px",
           "-webkit-transition-duration": "2s",
           "transition-duration": "2s",
@@ -123,9 +122,6 @@ $(()=> {
       }, 500)
       setTimeout(()=>{
         $("#mainPage").show();
-        // $('html,body').animate({
-        //    scrollTop: $("#mainPage").offset().top
-        // },"slow");
       }, 500)
 
       $(".about, .projectsContainer, .contactMe").css({
@@ -151,6 +147,56 @@ $(()=> {
         });
       }, 2700)
     })
+
+    $(".menuButton").click(()=>{
+        $("#about, #projects, #contact").animate({
+          "width": "33.3333%"
+        });
+        $("#about > a, #projects > a, #contact > a").animate({
+          "opacity": "1",
+        });
+        $(".menuButton").animate( { "opacity": 0} , 500 )
+    })
+
+    $("#about > a").click(()=>{
+        $("#about").animate({
+          "width": "100%",
+        });
+        $("#projects, #contact").animate({
+          "width": "0%",
+        });
+        $("#about > a, #projects > a, #contact > a").animate({
+          "opacity": "0",
+        });
+        $(".menuButton").animate( { "opacity": 1} , 500 )
+    })
+    $("#projects > a").click(()=>{
+        $("#projects").animate({
+          "width": "100%",
+        });
+        $("#about, #contact").animate({
+          "width": "0%",
+        });
+        $("#about > a, #projects > a, #contact > a").animate({
+          "opacity": "0",
+        });
+        $(".menuButton").animate( { "opacity": 1} , 500 )
+    })
+    $("#contact > a").click(()=>{
+        $("#contact").animate({
+          "width": "100%",
+        });
+        $("#projects, #about").animate({
+          "width": "0%",
+        });
+        $("#about > a, #projects > a, #contact > a").animate({
+          "opacity": "0",
+        });
+        $(".menuButton").animate( { "opacity": 1} , 500 )
+    })
+
+
+
 
 
 });
