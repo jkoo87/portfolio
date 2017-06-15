@@ -10,9 +10,12 @@ $(()=> {
     $(".titleContainer").css({
       "visibility": "visible"
     });
-    $(".skipButton").animate( { "opacity": 1} , 500 )
+
+
+    $(".aboutContainer, .projectsContainer, .contactContainer").hide();
 
     setTimeout(()=> {
+      $(".skipButton").animate( { "opacity": 1} )
       $(".titleContainer").css({
         "font-size": "50px",
         transform: "perspective( 500px ) rotateY(-50deg) rotateX(-30deg)",
@@ -124,7 +127,7 @@ $(()=> {
         $("#mainPage").show();
       }, 500)
 
-      $(".about,#myPicWrapper, .projectsContainer, .contactMe").css({
+      $(".about,#myPicWrapper, .projects, .contactMe").css({
         "opacity":"1",
       });
 
@@ -135,7 +138,7 @@ $(()=> {
         });
       }, 2400)
       setTimeout(()=>{
-        $(".projectsContainer > *").css({
+        $(".projects > *").css({
           "font-size": "25px",
           "padding": "5px"
         });
@@ -152,9 +155,8 @@ $(()=> {
         $("#about, #projects, #contact").animate({
           "width": "33.3333%"
         });
-        $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "1"
-        });
+        $("#about > a, #projects > a, #contact > a").delay(500).fadeIn('slow')
+        $(".aboutContainer, .contactContainer, .projectsContainer").fadeOut()
         $(".menuButton").animate( { "opacity": 0} , 500 )
         $("#myPicWrapper").animate( { "width": "0%", "min-width": "0px"} )
 
@@ -167,11 +169,10 @@ $(()=> {
         $("#projects, #contact").animate({
           "width": "0%"
         });
-        $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "0"
-        });
+        $("#about > a, #projects > a, #contact > a").fadeOut(1000);
         $(".menuButton").animate( { "opacity": 1} , 500 )
-        $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 1000 )
+        $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 500 )
+        $(".aboutContainer").delay(1300).fadeIn(1000)
 
     })
     $("#projects > a").click(()=>{
@@ -181,10 +182,9 @@ $(()=> {
         $("#about, #contact").animate({
           "width": "0%",
         });
-        $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "0",
-        });
+        $("#about > a, #projects > a, #contact > a").fadeOut(1000)
         $(".menuButton").animate( { "opacity": 1} , 500 )
+        $(".projectsContainer").delay(1300).fadeIn(1000)
     })
     $("#contact > a").click(()=>{
         $("#contact").animate({
@@ -193,10 +193,9 @@ $(()=> {
         $("#projects, #about").animate({
           "width": "0%",
         });
-        $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "0",
-        });
+        $("#about > a, #projects > a, #contact > a").fadeOut(1000)
         $(".menuButton").animate( { "opacity": 1} , 500 )
+        $(".contactContainer").delay(1300).fadeIn(1000)
     })
 
 
