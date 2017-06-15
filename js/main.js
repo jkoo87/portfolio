@@ -124,28 +124,28 @@ $(()=> {
         $("#mainPage").show();
       }, 500)
 
-      $(".about, .projectsContainer, .contactMe").css({
+      $(".about,#myPicWrapper, .projectsContainer, .contactMe").css({
         "opacity":"1",
       });
 
       setTimeout(()=>{
         $(".about > *").css({
-          "font-size": "20px",
+          "font-size": "25px",
           "padding": "5px"
         });
-      }, 2300)
+      }, 2400)
       setTimeout(()=>{
         $(".projectsContainer > *").css({
-          "font-size": "20px",
+          "font-size": "25px",
           "padding": "5px"
         });
-      }, 2500)
+      }, 2650)
       setTimeout(()=>{
         $(".contactMe > *").css({
-          "font-size": "20px",
+          "font-size": "25px",
           "padding": "5px"
         });
-      }, 2700)
+      }, 2900)
     })
 
     $(".menuButton").click(()=>{
@@ -153,22 +153,26 @@ $(()=> {
           "width": "33.3333%"
         });
         $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "1",
+          "opacity": "1"
         });
         $(".menuButton").animate( { "opacity": 0} , 500 )
+        $("#myPicWrapper").animate( { "width": "0%", "min-width": "0px"} )
+
     })
 
     $("#about > a").click(()=>{
         $("#about").animate({
-          "width": "100%",
+          "width": "100%"
         });
         $("#projects, #contact").animate({
-          "width": "0%",
+          "width": "0%"
         });
         $("#about > a, #projects > a, #contact > a").animate({
-          "opacity": "0",
+          "opacity": "0"
         });
         $(".menuButton").animate( { "opacity": 1} , 500 )
+        $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 1000 )
+
     })
     $("#projects > a").click(()=>{
         $("#projects").animate({

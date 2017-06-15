@@ -187,7 +187,7 @@ body {
   bottom: 10%;
   font-size: 20px;
   position: absolute;
-  right:43%;
+  right:44%;
   opacity: 0;
 }
 .titleButton:hover, .skipButton:hover {
@@ -222,13 +222,14 @@ body {
   vertical-align: middle;
   text-decoration: none;
   color: black;
-  text-shadow: 2px 1px 1px white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
   font-size: 0px;
   text-align: center;
   border-top: 5px solid black;
   border-bottom: 5px solid black;
   min-width: 20%;
-  transition: all 1.5s cubic-bezier(1,-0.01, 0, 1.45);
+  transition: all 1.0s cubic-bezier(1,-0.01, 0, 1.45);
 }
 .menuButton{
   position: absolute;
@@ -237,9 +238,9 @@ body {
   text-shadow: 1px 1px 1px grey;
   top: 3%;
   left: 3%;
-  width: 50px;
+  width: 60px;
   height: 30px;
-  font-size: 20px;
+  font-size: 25px;
   transition: all 0.3s ease;
   border: 3px ridge;
   border-radius: 10px;
@@ -250,16 +251,18 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
 }
 .menuButton:hover{
-  font-size: 25px;
+  font-size: 30px;
   border: 5px solid #871938;
   padding: 5px;
-  width: 80px;
+  width: 90px;
 }
 
 
 .about{
-  background: url("./img/aboutBackground.jpg")no-repeat center;
+  background: url("./img/aboutBackground.jpg")no-repeat;
+  background-position: center;
   background-size: cover;
+  animation: backgroundEnter 2.5s linear;
 }
 
 .about > a:hover {
@@ -269,6 +272,7 @@ body {
 .projectsContainer {
   background: url("./img/projectBackground1.jpg")no-repeat center;
   background-size: cover;
+  animation: backgroundEnter 3.5s linear;
 }
 .projectsContainer > a {
   color: white;
@@ -278,15 +282,15 @@ body {
   border-bottom: 5px solid white;
 }
 .projectsContainer > a:hover{
-  /*background-color: skyblue;*/
   animation: textEffect 1s ease-in infinite;
 
 }
 .contactMe{
-  background-color: gold;
+  background: url("./img/contact.jpeg")no-repeat center;
+  background-size: cover;
+  animation: backgroundEnter 3.7s linear;
 }
 .contactMe > a:hover{
-  /*background-color: gold;*/
   animation: textEffect 1s ease-in infinite;
 }
 
@@ -299,3 +303,34 @@ body {
     border-top: 10px solid brown;
     border-bottom: 10px solid brown;
   }
+}
+@keyframes backgroundEnter{
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: center;
+  }
+}
+
+/*about page content*/
+#myPicWrapper{
+  background-color: white;
+  width: 0%;
+  min-width: 0px;
+  flex-direction:column;
+}
+#myPic{
+  background: url("./img/jeongKoo.jpg")no-repeat top;
+  background-size: cover;
+  width: 75%;
+  height: 50%;
+}
+#brandStatement{
+  margin-top: 10px;
+  font-size: 40px;
+}
+#brandStatement span{
+  font-size: 30px;
+  color: #286cba;
+}
