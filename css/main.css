@@ -358,6 +358,12 @@ body {
   width: 85%;
   height: 100%;;
 }
+#resume{
+  margin-top: 20px;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 /*project page content*/
 .projectsContainer{
@@ -375,7 +381,7 @@ body {
 .iconWrapper{
   display: flex;
   flex-direction: row;
-  
+
 }
 
 .link{
