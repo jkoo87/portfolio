@@ -13,6 +13,7 @@ $(()=> {
 
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
+    $(".link > span").hide();
 
     setTimeout(()=> {
       $(".skipButton").animate( { "opacity": 1} )
@@ -196,6 +197,31 @@ $(()=> {
         $("#about > a, #projects > a, #contact > a").fadeOut(1000)
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $(".contactContainer").delay(1300).fadeIn(1000)
+
+        $("#emailWrapper").on({
+          mouseenter: () => {
+            $("#email > span").fadeIn();
+          },
+          mouseleave: () => {
+            $("#email > span").fadeOut();
+          }
+        });
+        $("#githubWrapper").on({
+          mouseenter: () => {
+            $("#github > span").fadeIn();
+          },
+          mouseleave: () => {
+            $("#github > span").fadeOut();
+          }
+        });
+        $("#linkedInWrapper").on({
+          mouseenter: () => {
+            $("#linkedIn > span").fadeIn();
+          },
+          mouseleave: () => {
+            $("#linkedIn > span").fadeOut();
+          }
+        });
     })
 
 

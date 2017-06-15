@@ -367,14 +367,32 @@ body {
 .contactContainer{
   text-align: center;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.iconWrapper{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.link{
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 100px;
+}
+.link > span{
+  /*visibility:collapse;*/
+}
+
       .github {
         background: url("./img/icons/github.png") center repeat-x;
         background-size: cover;
         margin: 14px;
         width: 60px;
         height: 60px;
-        display: inline-block;
         opacity: 0.7;
       }
       .linkedin {
@@ -383,15 +401,13 @@ body {
         margin: 14px;
         width: 60px;
         height: 60px;
-        display: inline-block;
         opacity: 0.7
       }
-      .instagram {
-        background: url("./img/icons/instagram.png") center repeat-x;
+      .email {
+        background: url("./img/icons/email.png") center repeat-x;
         background-size: cover;
         margin: 14px;
         width: 60px;
         height: 60px;
-        display: inline-block;
         opacity: 0.7
       }
