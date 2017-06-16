@@ -14,6 +14,7 @@ $(()=> {
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
     $(".link > a").hide();
+    $(".projectDescription").hide();
 
     setTimeout(()=> {
       $(".skipButton").animate( { "opacity": 1} )
@@ -190,17 +191,22 @@ $(()=> {
         $("#prjectOne").on({
         mouseenter: function() {
             $("#prjectOne > img").attr("src", "./css/img/projects/simon.gif");
+            $("#prjectOne > .projectDescription").slideDown();
+
           },
           mouseleave: function() {
             $("#prjectOne > img").attr("src", "./css/img/projects/simon.png");
+            $("#prjectOne > .projectDescription").slideUp();
           }
         });
         $("#prjectTwo").on({
         mouseenter: function() {
             $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.gif");
+            $("#prjectTwo > .projectDescription").slideDown();
           },
           mouseleave: function() {
             $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
+            $("#prjectTwo > .projectDescription").slideUp();
           }
         });
         $("#prjectThree").on({
