@@ -388,11 +388,6 @@ body {
 .projectsContainer{
   width: 100%;
   margin: auto;
-  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
-}
-.projectsContainer > * {
-  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
-
 }
 
 #navbar{
@@ -409,7 +404,6 @@ body {
   color: white;
 }
 
-
 .project{
   margin-top: 80px;
   margin-bottom: 40px;
@@ -419,18 +413,35 @@ body {
   justify-content: center;
   align-items:center;
 }
+
+.project:hover img{
+  box-shadow: 1px 1px 10px white;
+  border-radius: 30px;
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+
+}
+
 .project > img{
-  width: 60%;
+  width: 65%;
   max-width: 800px;
   min-width: 400px;
 }
 .projectDescription{
-  width: 80%;
-  max-width: 900px;
+  width: 65%;
+  max-width: 800px;
   min-width: 400px;
-  background: white;
+  background: rgba(255,255,255,0.7);
+  margin-top: 10px;
+  border-radius: 20px;
   padding: 10px 30px;
+  text-align: left;
+}
+.projectDescription > h2{
+  margin: 0;
+}
 
+.demo{
+  text-align: center;
 }
 /*contact page*/
 .contactContainer{
