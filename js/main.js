@@ -201,25 +201,43 @@ $(()=> {
         $("#emailWrapper").on({
           mouseenter: () => {
             $("#email > a").fadeIn();
+            $("#emailWrapper").animate({
+              "margin-left": "-140px"
+            })
           },
           mouseleave: () => {
             $("#email > a").fadeOut();
+            $("#emailWrapper").animate({
+              "margin-left": "0px"
+            })
           }
         });
         $("#githubWrapper").on({
           mouseenter: () => {
             $("#github > a").fadeIn();
+            $("#githubWrapper").animate({
+              "margin-left": "-80px"
+            })
           },
           mouseleave: () => {
             $("#github > a").fadeOut();
+            $("#githubWrapper").animate({
+              "margin-left": "0px"
+            })
           }
         });
         $("#linkedInWrapper").on({
           mouseenter: () => {
             $("#linkedIn > a").fadeIn();
+            $("#linkedInWrapper").animate({
+              "margin-left": "-90px"
+            })
           },
           mouseleave: () => {
             $("#linkedIn > a").fadeOut();
+            $("#linkedInWrapper").animate({
+              "margin-left": "0px"
+            })
           }
         });
     })
