@@ -402,6 +402,7 @@ body {
 .projectsContainer > h1{
   margin-top: 100px;
   color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 .project{
@@ -417,7 +418,6 @@ body {
 .project:hover img{
   box-shadow: 1px 1px 10px white;
   border-radius: 30px;
-  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
 
 }
 
@@ -425,6 +425,8 @@ body {
   width: 65%;
   max-width: 800px;
   min-width: 400px;
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+
 }
 .projectDescription{
   width: 65%;
@@ -438,6 +440,7 @@ body {
 }
 .projectDescription > h2{
   margin: 0;
+  text-align: center;
 }
 
 .demo{

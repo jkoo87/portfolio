@@ -14,6 +14,8 @@ $(()=> {
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
     $(".link > a").hide();
+    $("#contactIcons").hide();
+    $(".projectDescription").hide();
 
     setTimeout(()=> {
       $(".skipButton").animate( { "opacity": 1} )
@@ -160,6 +162,7 @@ $(()=> {
         $(".aboutContainer, .contactContainer, .projectsContainer").fadeOut()
         $(".menuButton").animate( { "opacity": 0} , 500 )
         $("#myPicWrapper").animate( { "width": "0%", "min-width": "0px"} )
+        $("#contactIcons").fadeOut();
 
     })
 
@@ -171,6 +174,7 @@ $(()=> {
           "width": "0%"
         });
         $("#about > a, #projects > a, #contact > a").fadeOut(1000);
+        $("#contactIcons").fadeIn();
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 500 )
         $(".aboutContainer").delay(1300).fadeIn(1000)
@@ -190,17 +194,22 @@ $(()=> {
         $("#prjectOne").on({
         mouseenter: function() {
             $("#prjectOne > img").attr("src", "./css/img/projects/simon.gif");
+            $("#prjectOne > .projectDescription").slideDown();
+
           },
           mouseleave: function() {
             $("#prjectOne > img").attr("src", "./css/img/projects/simon.png");
+            $("#prjectOne > .projectDescription").slideUp();
           }
         });
         $("#prjectTwo").on({
         mouseenter: function() {
             $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.gif");
+            $("#prjectTwo > .projectDescription").slideDown();
           },
           mouseleave: function() {
             $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
+            $("#prjectTwo > .projectDescription").slideUp();
           }
         });
         $("#prjectThree").on({
