@@ -263,8 +263,9 @@ body {
   background-position: center;
   background-size: cover;
   animation: backgroundEnter 2.5s linear;
-  overflow: scroll;
+  overflow: auto;
 }
+
 
 .about > a:hover {
   animation: textEffect 1s ease-in infinite;
@@ -274,7 +275,7 @@ body {
   background: url("./img/projectBackground1.jpg")no-repeat center;
   background-size: cover;
   animation: backgroundEnter 3.5s linear;
-  overflow: scroll;
+  overflow: auto;
 }
 .projects > a {
   color: white;
@@ -291,7 +292,7 @@ body {
   background: url("./img/contact.jpeg")no-repeat center;
   background-size: cover;
   animation: backgroundEnter 3.7s linear;
-  overflow: scroll;
+  overflow: auto;
 }
 .contactMe > a:hover{
   animation: textEffect 1s ease-in infinite;
@@ -358,15 +359,12 @@ body {
   width: 85%;
   height: 100%;;
 }
-#resume{
-  margin-top: 20px;
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 10px;
-}
 
 /*project page content*/
 .projectsContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
 }
 /*contact page*/
@@ -381,6 +379,31 @@ body {
 .iconWrapper{
   display: flex;
   flex-direction: row;
+}
+.iconWrapper > *{
+  transform: rotate(0deg) ;
+  -webkit-transform: rotate(0deg) ;
+}
+
+.iconWrapper:hover .email{
+  animation: motion 3s ease-in ;
+}
+.iconWrapper:hover .github{
+  animation: motion 3s ease-in;
+}
+.iconWrapper:hover .linkedin{
+  animation: motion 3s ease-in;
+}
+
+@keyframes motion {
+  from{
+    transform: rotate(0deg) ;
+    -webkit-transform: rotate(0deg) ;
+  }
+  to{
+    transform: rotate(360deg) ;
+    -webkit-transform: rotate(360deg) ;
+  }
 
 }
 
@@ -388,9 +411,14 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   line-height: 100px;
+  position: relative;
 }
-.link > span{
-  /*visibility:collapse;*/
+.link > a {
+  position: absolute;
+  animation: smokeEffect 1s forwards;
+  top: 0px;
+  left: 130px;
+  text-decoration: none;
 }
 
       .github {

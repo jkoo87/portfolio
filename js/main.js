@@ -13,7 +13,7 @@ $(()=> {
 
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
-    $(".link > span").hide();
+    $(".link > a").hide();
 
     setTimeout(()=> {
       $(".skipButton").animate( { "opacity": 1} )
@@ -178,7 +178,7 @@ $(()=> {
     })
     $("#projects > a").click(()=>{
         $("#projects").animate({
-          "width": "100%",
+          "width": "100%"
         });
         $("#about, #contact").animate({
           "width": "0%",
@@ -189,7 +189,7 @@ $(()=> {
     })
     $("#contact > a").click(()=>{
         $("#contact").animate({
-          "width": "100%",
+          "width": "100%"
         });
         $("#projects, #about").animate({
           "width": "0%",
@@ -200,26 +200,26 @@ $(()=> {
 
         $("#emailWrapper").on({
           mouseenter: () => {
-            $("#email > span").fadeIn();
+            $("#email > a").fadeIn();
           },
           mouseleave: () => {
-            $("#email > span").fadeOut();
+            $("#email > a").fadeOut();
           }
         });
         $("#githubWrapper").on({
           mouseenter: () => {
-            $("#github > span").fadeIn();
+            $("#github > a").fadeIn();
           },
           mouseleave: () => {
-            $("#github > span").fadeOut();
+            $("#github > a").fadeOut();
           }
         });
         $("#linkedInWrapper").on({
           mouseenter: () => {
-            $("#linkedIn > span").fadeIn();
+            $("#linkedIn > a").fadeIn();
           },
           mouseleave: () => {
-            $("#linkedIn > span").fadeOut();
+            $("#linkedIn > a").fadeOut();
           }
         });
     })
