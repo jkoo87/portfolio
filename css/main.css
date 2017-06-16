@@ -184,10 +184,11 @@ body {
 
 }
 .skipButton{
-  bottom: 10%;
+  bottom: 15%;
   font-size: 20px;
   position: absolute;
   right:45%;
+  /*right: 40%*/
   opacity: 0;
 }
 .titleButton:hover, .skipButton:hover {
@@ -246,15 +247,12 @@ body {
   border-radius: 10px;
   text-decoration: none;
   padding: 0 10px;
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.7);
 }
 .menuButton:hover{
-  font-size: 30px;
-  border: 5px solid #871938;
-  padding: 5px;
-  width: 90px;
+  background-color: gold;
 }
 
 
@@ -341,7 +339,7 @@ body {
 }
 #nameTitle span{
   font-size: 30px;
-  color: #ce1d1d;
+  color: #1b92ff;
   text-shadow: 1px 1px 1px black;
 }
 .aboutContainer{
@@ -359,13 +357,69 @@ body {
   width: 85%;
   height: 100%;;
 }
+#resume{
+  background-color: #f1b400;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: 2px solid;
+}
+#resume > a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  font-size: 18px;
+}
+#resume:hover {
+  box-shadow: 1px 1px 10px black;
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+
+}
 
 /*project page content*/
+
 .projectsContainer{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
   margin: auto;
+}
+
+#navbar{
+  width: 70%;
+  line-height: 55px;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: #000;
+  opacity: 0.8;
+}
+.projectsContainer > h1{
+  margin-top: 100px;
+  color: white;
+}
+
+
+.project{
+  margin-top: 80px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+.project > img{
+  width: 60%;
+  max-width: 800px;
+  min-width: 400px;
+}
+.projectDescription{
+  width: 80%;
+  max-width: 900px;
+  min-width: 400px;
+  background: white;
+  padding: 10px 30px;
+
 }
 /*contact page*/
 .contactContainer{
@@ -419,6 +473,12 @@ body {
   top: 0px;
   left: 130px;
   text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  color: #a7c109
+}
+
+.link > a:hover{
+  text-decoration: underline;
 }
 
       .github {
