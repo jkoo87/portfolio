@@ -374,7 +374,13 @@ body {
 #resume:hover {
   box-shadow: 1px 1px 10px black;
   transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
-
+}
+#contactIcons{
+  display: flex;
+  flex-direction: row;
+}
+#contactIcons > a:hover{
+  animation: motion 2s ease-in;
 }
 
 /*project page content*/
@@ -382,6 +388,11 @@ body {
 .projectsContainer{
   width: 100%;
   margin: auto;
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+}
+.projectsContainer > * {
+  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+
 }
 
 #navbar{

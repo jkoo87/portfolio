@@ -186,6 +186,39 @@ $(()=> {
         $("#about > a, #projects > a, #contact > a").fadeOut(1000)
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $(".projectsContainer").delay(1300).fadeIn(1000)
+
+        $("#prjectOne").on({
+        mouseenter: function() {
+            $("#prjectOne > img").attr("src", "./css/img/projects/simon.gif");
+          },
+          mouseleave: function() {
+            $("#prjectOne > img").attr("src", "./css/img/projects/simon.png");
+          }
+        });
+        $("#prjectTwo").on({
+        mouseenter: function() {
+            $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.gif");
+          },
+          mouseleave: function() {
+            $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
+          }
+        });
+        $("#prjectThree").on({
+        mouseenter: function() {
+            $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.gif");
+          },
+          mouseleave: function() {
+            $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.png");
+          }
+        });
+        $("#prjectFour").on({
+        mouseenter: function() {
+            $("#prjectFour > img").attr("src", "./css/img/projects/slugingDC.gif");
+          },
+          mouseleave: function() {
+            $("#prjectFour > img").attr("src", "./css/img/projects/slugingDC.png");
+          }
+        });
     })
     $("#contact > a").click(()=>{
         $("#contact").animate({
