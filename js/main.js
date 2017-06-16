@@ -14,6 +14,7 @@ $(()=> {
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
     $(".link > a").hide();
+    $("#contactIcons").hide();
     $(".projectDescription").hide();
 
     setTimeout(()=> {
@@ -161,6 +162,7 @@ $(()=> {
         $(".aboutContainer, .contactContainer, .projectsContainer").fadeOut()
         $(".menuButton").animate( { "opacity": 0} , 500 )
         $("#myPicWrapper").animate( { "width": "0%", "min-width": "0px"} )
+        $("#contactIcons").fadeOut();
 
     })
 
@@ -172,6 +174,7 @@ $(()=> {
           "width": "0%"
         });
         $("#about > a, #projects > a, #contact > a").fadeOut(1000);
+        $("#contactIcons").fadeIn();
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 500 )
         $(".aboutContainer").delay(1300).fadeIn(1000)
