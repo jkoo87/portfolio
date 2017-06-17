@@ -200,8 +200,7 @@ body {
 /*mobile intro*/
 @media only screen and (max-device-width: 480px) {
   #about > a , #projects > a, #contact > a{
-    font-size: 50px;
-    animation: nameFont 10s infinite;
+    animation: nameFont 1s infinite;
   }
   @keyframes nameFont {
     from{
@@ -381,8 +380,12 @@ body {
     text-align: center;
     font-size: 40px;
   }
-
-
+  .mainContainer > * > a{
+    transition: all 0.5s ease;
+  }
+  .mainContainer > div {
+    transition: all 0.5s ease;
+  }
 }
 
 
