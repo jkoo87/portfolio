@@ -152,6 +152,7 @@ $(()=> {
           "padding": "5px"
         });
       }, 2900)
+
     })
 
     $(".menuButton").click(()=>{
@@ -195,6 +196,7 @@ $(()=> {
         mouseenter: function() {
             $("#prjectOne > img").attr("src", "./css/img/projects/simon.gif");
             $("#prjectOne > .projectDescription").slideDown();
+            $("#projectOne> img").scrollTop(0);
 
           },
           mouseleave: function() {

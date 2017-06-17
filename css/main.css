@@ -122,8 +122,8 @@ body {
   text-align: center;
 }
 #front {
-  transform: translateZ(75px);
-  -webkit-transform: translateZ(75px);
+  transform: translateZ(75px) translateZ(105px);
+  -webkit-transform: translateZ(75px) translateZ(105px);
   background: black;
 }
 #back {
@@ -181,18 +181,81 @@ body {
   background-color: white;
   transition: all 1s ease;
   color: #0066cc;
-
 }
 .skipButton{
   bottom: 15%;
   font-size: 20px;
+  font-weight: bold;
+  padding: 10px 10px;
   position: absolute;
   right:45%;
-  /*right: 40%*/
+  text-shadow: 1px 1px 1px #000066;
   opacity: 0;
 }
 .titleButton:hover, .skipButton:hover {
   background-color: #4273d6;
+  color: white;
+}
+
+/*mobile intro*/
+@media only screen and (max-device-width: 480px) {
+  #about > a , #projects > a, #contact > a{
+    font-size: 50px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    animation: nameFont 10s infinite;
+  }
+  @keyframes nameFont {
+    from{
+      font-size: 50px;
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+    }
+    to{
+      font-size: 50px;
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+
+  .menuButton{
+    width: 120px;
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .skipButton{
+    bottom: 25%;
+    font-size: 35px;
+    font-weight: bold;
+    right: 40%;
+  }
+  .titleButton{
+    text-decoration: none;
+    font-size: 0px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin: 10px 0;
+    animation: titleButtonLight 0.9s 30;
+
+  }
+  @keyframes titleButtonLight {
+    from{
+      color: #0066cc;
+      background-color: white;
+    }
+    to{
+      background-color: #4273d6;
+      color: white;
+    }
+  }
+  #boxMain{
+    position: absolute;
+    right: -300px;
+    top: 900px;
+  }
 }
 
 
@@ -315,6 +378,20 @@ body {
   }
 }
 
+/*mobile main Index*/
+@media only screen and (max-device-width: 480px) {
+  .menuButton{
+    width: 120px;
+    line-height: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+
+}
+
+
 /*about page content*/
 #myPicWrapper{
   flex-direction:column;
@@ -382,7 +459,10 @@ body {
 #contactIcons > a:hover{
   animation: motion 2s ease-in;
 }
+/*mobile about page*/
+@media only screen and (max-device-width: 480px) {
 
+}
 /*project page content*/
 
 .projectsContainer{
@@ -445,6 +525,16 @@ body {
 
 .demo{
   text-align: center;
+}
+@media only screen and (max-device-width: 480px) {
+  .project > img{
+    width: 100%;
+    max-width: 850px;
+  }
+  .projectDescription{
+      width: 100%;
+      max-width: 850px;
+  }
 }
 /*contact page*/
 .contactContainer{
