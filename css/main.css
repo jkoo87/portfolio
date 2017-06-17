@@ -183,7 +183,7 @@ body {
   color: #0066cc;
 }
 .skipButton{
-  bottom: 15%;
+  bottom: 8%;
   font-size: 20px;
   font-weight: bold;
   padding: 10px 10px;
@@ -201,20 +201,14 @@ body {
 @media only screen and (max-device-width: 480px) {
   #about > a , #projects > a, #contact > a{
     font-size: 50px;
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
     animation: nameFont 10s infinite;
   }
   @keyframes nameFont {
     from{
       font-size: 50px;
-      transform: rotate(-90deg);
-      -webkit-transform: rotate(-90deg);
     }
     to{
       font-size: 50px;
-      transform: rotate(-90deg);
-      -webkit-transform: rotate(-90deg);
     }
   }
 
