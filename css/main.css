@@ -172,6 +172,17 @@ body {
 }
 .titleButton{
   text-shadow: -2px -1px 1px #000066;
+  animation: titleButtonLight 0.9s 30;
+}
+@keyframes titleButtonLight {
+  from{
+    color: #0066cc;
+    background-color: white;
+  }
+  to{
+    background-color: #4273d6;
+    color: white;
+  }
 }
 .titleButton, .skipButton{
   text-decoration: none;
@@ -201,13 +212,16 @@ body {
 @media only screen and (max-device-width: 480px) {
   #about > a , #projects > a, #contact > a{
     animation: nameFont 1s infinite;
+    width: 1px;
+    min-width: 50px;
+    overflow-wrap: break-word;
   }
   @keyframes nameFont {
     from{
-      font-size: 50px;
+      font-size: 60px;
     }
     to{
-      font-size: 50px;
+      font-size: 60px;
     }
   }
 
@@ -231,19 +245,9 @@ body {
     padding: 15px 30px;
     border-radius: 20px;
     margin: 10px 0;
-    animation: titleButtonLight 0.9s 30;
 
   }
-  @keyframes titleButtonLight {
-    from{
-      color: #0066cc;
-      background-color: white;
-    }
-    to{
-      background-color: #4273d6;
-      color: white;
-    }
-  }
+
   #boxMain{
     position: absolute;
     right: -300px;
@@ -311,6 +315,25 @@ body {
   background-color: gold;
 }
 
+.logo{
+  background: url("./img/logo.png")no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 120px;
+  height: 90px;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  }
+
+.logo:hover{
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 1px 1px 10px black;
+  }
 
 .about{
   background: url("./img/aboutBackground.jpg")no-repeat;
@@ -381,11 +404,15 @@ body {
     font-size: 40px;
   }
   .mainContainer > * > a{
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
   .mainContainer > div {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
+  .logo{
+    width: 150px;
+    height: 120px;
+    }
 }
 
 
@@ -432,7 +459,7 @@ body {
   height: 100%;;
 }
 #resume{
-  background-color: #f1b400;
+  background-color: rgba(241,180,0,0.7);
   padding: 10px 20px;
   border-radius: 10px;
   margin-top: 30px;
@@ -440,14 +467,15 @@ body {
 }
 #resume > a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px white;
   font-size: 18px;
 }
 #resume:hover {
+  background-color: rgba(241,180,0,1);
   box-shadow: 1px 1px 10px black;
-  transition: all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21);
+  transition: all 0.3s ease;
 }
 #contactIcons{
   display: flex;
@@ -589,6 +617,7 @@ body {
   color: #a7c109
 }
 
+
 .link > a:hover{
   text-decoration: underline;
 }
@@ -617,3 +646,20 @@ body {
         height: 60px;
         opacity: 0.7
       }
+/*contact mobile*/
+@media only screen and (max-device-width: 480px) {
+  .contactContainer > h1{
+    font-size: 80px;
+  }
+  div.email, div.github, div.linkedin {
+    width: 130px;
+    height: 130px;
+  }
+  .link {
+    font-size: 1.5em;
+    line-height: 200px;
+  }
+  a.linkedinLink {
+    left: 160px;
+  }
+}

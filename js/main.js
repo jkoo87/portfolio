@@ -217,9 +217,11 @@ $(()=> {
         $("#prjectThree").on({
         mouseenter: function() {
             $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.gif");
+            $("#prjectThree > .projectDescription").slideDown();
           },
           mouseleave: function() {
             $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.png");
+            $("#prjectThree > .projectDescription").slideUp();
           }
         });
         $("#prjectFour").on({
