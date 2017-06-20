@@ -493,6 +493,7 @@ body {
 .projectsContainer{
   width: 100%;
   margin: auto;
+  margin-bottom: 150px;
 }
 
 #navbar{
@@ -504,6 +505,10 @@ body {
   background-color: #000;
   opacity: 0.8;
 }
+.active{
+  background-color: gold;
+}
+
 .projectsContainer > h1{
   margin-top: 100px;
   color: white;
@@ -588,6 +593,9 @@ body {
   .projectDescription{
       width: 100%;
       max-width: 850px;
+  }
+  #navbar{
+    display: none;
   }
 }
 /*contact page*/

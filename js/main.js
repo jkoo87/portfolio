@@ -156,6 +156,7 @@ $(()=> {
     })
 
     $(".menuButton").click(()=>{
+        $(".project > .projectDescription").slideUp();
         $("#about, #projects, #contact").animate({
           "width": "33.3333%"
         });
@@ -192,47 +193,122 @@ $(()=> {
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $(".projectsContainer").delay(1300).fadeIn(1000)
 
-        $("#prjectOne").on({
-        mouseenter: function() {
-            $("#prjectOne > img").attr("src", "./css/img/projects/simon.gif");
-            $("#prjectOne > .projectDescription").slideDown();
-            $("#projectOne> img").scrollTop(0);
+        //image/navbar on click replace png to gif and show its description
 
+        $("#projectOne, #projectOnelink").click(()=>{
+            $(".project > .projectDescription:not(#projectOne > .projectDescription)").slideUp();
+            setTimeout(()=>{
+              $("#projects").animate({
+                  scrollTop: $("#projects").scrollTop() + $("#projectOne").offset().top-100});
+                  $("#projectOne > .projectDescription").slideDown();
+            }, 400)
+        });
+        $("#projectTwo, #projectTwolink").click(()=>{
+            $(".project > .projectDescription:not(#projectTwo > .projectDescription)").slideUp();
+            setTimeout(()=>{
+              $("#projects").animate({
+                  scrollTop: $("#projects").scrollTop() + $("#projectTwo").offset().top-100});
+                  $("#projectTwo > .projectDescription").slideDown();
+            }, 400)
+           });
+        $("#projectThree, #projectThreelink").click(()=>{
+            $(".project > .projectDescription:not(#projectThree > .projectDescription)").slideUp();
+            setTimeout(()=>{
+              $("#projects").animate({
+                  scrollTop: $("#projects").scrollTop() + $("#projectThree").offset().top-100});
+                  $("#projectThree > .projectDescription").slideDown();
+            }, 400)
+        });
+        $("#projectFour, #projectFourlink").click(()=>{
+            $(".project > .projectDescription:not(#projectFour > .projectDescription)").slideUp();
+            setTimeout(()=>{
+              $("#projects").animate({
+                  scrollTop: $("#projects").scrollTop() + $("#projectFour").offset().top-100});
+                  $("#projectFour > .projectDescription").slideDown();
+            }, 400)
+        });
+
+        //on scroll change navbar a class
+        function goToByScroll(id){
+            id += "link"
+            $("#"+id).addClass('active');
+            $("#navbar > a").not("#"+id).removeClass('active');
+        }
+        $("#projects").scroll(function(){
+          if ($(this).scrollTop() === 0){
+            $("#navbar > a").removeClass('active');
+          } else {
+            $(".project").each(function(i){
+              if($(this).position().top <= $(this).scrollTop()+300){
+                goToByScroll($(this).attr("id"));
+              }
+            })
+          }
+        }).scroll()
+
+        //Nav bar on click scroll down to the top of its clicked div
+        // function goToByScroll(id){
+        //     id = id.replace("link", "");
+        //     $("#projects").animate({
+        //         scrollTop: $("#projects").scrollTop() + $("#"+id).offset().top-100});
+        //     let divId= "#" + id + " > .projectDescription"
+        //     $(divId).slideDown();
+        //     setTimeout(()=>{
+        //       $(".project > .projectDescription").not(divId).slideUp();
+        //     }, 400)
+        //         // console.log("offsetTop", $("#projects").offset().top)
+        //         // console.log("element", $("#"+id).offset().top-100)
+        // }
+        // $("#navbar > a").click(function(e) {
+        //     e.preventDefault();
+        //     // $("#projectOne > img").attr("src", "./css/img/projects/simon.png");
+        //     // $("#projectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
+        //     // $("#projectThree > img").attr("src", "./css/img/projects/goldinauts.png");
+        //     // $("#projectFour > img").attr("src", "./css/img/projects/slugingDC.png");
+        //     // $(".project > .projectDescription").slideUp();
+        //       // Call the scroll function
+        //     setTimeout(()=>{
+        //       goToByScroll($(this).attr("id"));
+        //     }, 400)
+        //
+        // });
+
+        //on hover change img
+        $("#projectOne").on({
+        mouseenter: function() {
+            $("#projectOne > img").attr("src", "./css/img/projects/simon.gif");
           },
           mouseleave: function() {
-            $("#prjectOne > img").attr("src", "./css/img/projects/simon.png");
-            $("#prjectOne > .projectDescription").slideUp();
+            $("#projectOne > img").attr("src", "./css/img/projects/simon.png");
           }
         });
-        $("#prjectTwo").on({
+        $("#projectTwo").on({
         mouseenter: function() {
-            $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.gif");
-            $("#prjectTwo > .projectDescription").slideDown();
+            $("#projectTwo > img").attr("src", "./css/img/projects/cookingMyself.gif");
           },
           mouseleave: function() {
-            $("#prjectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
-            $("#prjectTwo > .projectDescription").slideUp();
+            $("#projectTwo > img").attr("src", "./css/img/projects/cookingMyself.png");
           }
         });
-        $("#prjectThree").on({
+        $("#projectThree").on({
         mouseenter: function() {
-            $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.gif");
-            $("#prjectThree > .projectDescription").slideDown();
+            $("#projectThree > img").attr("src", "./css/img/projects/goldinauts.gif");
           },
           mouseleave: function() {
-            $("#prjectThree > img").attr("src", "./css/img/projects/goldinauts.png");
-            $("#prjectThree > .projectDescription").slideUp();
+            $("#projectThree > img").attr("src", "./css/img/projects/goldinauts.png");
           }
         });
-        $("#prjectFour").on({
+        $("#projectFour").on({
         mouseenter: function() {
-            $("#prjectFour > img").attr("src", "./css/img/projects/slugingDC.gif");
+            $("#projectFour > img").attr("src", "./css/img/projects/slugingDC.gif");
           },
           mouseleave: function() {
-            $("#prjectFour > img").attr("src", "./css/img/projects/slugingDC.png");
+            $("#projectFour > img").attr("src", "./css/img/projects/slugingDC.png");
           }
         });
     })
+
+
     $("#contact > a").click(()=>{
         $("#contact").animate({
           "width": "100%"
