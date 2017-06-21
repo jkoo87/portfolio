@@ -497,22 +497,50 @@ body {
 }
 
 #navbar{
-  width: 70%;
-  line-height: 55px;
-  top: 0;
+  width: 100%;
+  line-height: 50px;
+  bottom: 0;
   position: fixed;
   z-index: 1;
-  background-color: #000;
-  opacity: 0.8;
+  background-color: rgba(0,0,0,0.7);
+}
+.linkContainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: row;
+}
+.linkContainer a{
+  text-decoration: none;
+  width: 200px;
+  border-radius: 20px;
+  color: rgba(255,255,255, 0.7);
+  transition: all 0.2s ease;
+}
+.linkContainer a:hover{
+  background-color: gold;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  color: rgba(0,0,0,1);
 }
 .active{
   background-color: gold;
+  color: black;
 }
 
 .projectsContainer > h1{
   margin-top: 100px;
   color: white;
   text-shadow: 1px 1px 2px black;
+  transition: all 0.3s ease;
+  border-top: 5px double white;
+  border-bottom: 5px double white;
+}
+.projectsPageTitleActive{
+  animation: smokeEffect 1s forwards;
+  font-size: 100px;
 }
 .projectsContainer > h2{
   color: white;
