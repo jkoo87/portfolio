@@ -227,6 +227,14 @@ $(()=> {
                   $("#projectFour > .projectDescription").slideDown();
             }, 400)
         });
+        $("#projectFive, #projectFivelink").click(()=>{
+            $(".project > .projectDescription:not(#projectFive > .projectDescription)").slideUp();
+            setTimeout(()=>{
+              $("#projects").animate({
+                  scrollTop: $("#projects").scrollTop() + $("#projectFive").offset().top-70});
+                  $("#projectFive > .projectDescription").slideDown();
+            }, 400)
+        });
 
         //on scroll change navbar a class
         function goToByScroll(id){
