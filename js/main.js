@@ -41,9 +41,11 @@ $(()=> {
     }, 3000);
 
 
-    let resetFlip = function(){
+    function resetFlip(){
       $("#titleName").removeClass("flip");
     }
+
+
     let fulStack='<span>FULL-STACK </span><span> </span></br><span>WEB</span><span> </span><span>DEVELOPER</span>'
 
 
