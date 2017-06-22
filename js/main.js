@@ -242,11 +242,11 @@ $(()=> {
         function goToByScroll(id){
             id += "link"
             $("#"+id).addClass('active');
-            $("#navbar > .linkContainer > a").not("#"+id).removeClass('active');
+            $("#navbar > .linkContainer > li").not("#"+id).removeClass('active');
         }
         $("#projects").scroll(function(){
           if ($(this).scrollTop() === 0){
-            $("#navbar> .linkContainer > a").removeClass('active');
+            $("#navbar> .linkContainer > li").removeClass('active');
             $("#projectsPageTitle").addClass('projectsPageTitleActive');
           } else {
             $("#projectsPageTitle").removeClass('projectsPageTitleActive');

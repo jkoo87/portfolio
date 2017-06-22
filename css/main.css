@@ -311,6 +311,7 @@ body {
   z-index: 2;
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }
 .menuButton:hover{
   background-color: gold;
@@ -486,14 +487,14 @@ body {
 }
 /*mobile about page*/
 @media only screen and (max-device-width: 480px) {
-  #myPicWrapper{
+  /*#myPicWrapper{
     flex-direction:column;
     background-color: white;
     width: 0%;
     min-width: 0px;
     height: 100px;
     margin: auto;
-  }
+  }*/
 
 }
 /*project page content*/
@@ -520,22 +521,23 @@ body {
   margin: 0 auto;
   flex-direction: row;
 }
-.linkContainer a{
-  text-decoration: none;
+.linkContainer li{
+  list-style-type: none;
   width: 200px;
   border-radius: 20px;
   color: rgba(255,255,255, 0.7);
   transition: all 0.2s ease;
+  cursor: pointer
 }
-.linkContainer a:hover{
+.linkContainer li:hover{
   background-color: gold;
   transition: all 0.3s ease;
   border-radius: 20px;
   color: rgba(0,0,0,1);
 }
 .active{
-  background-color: gold;
   color: black;
+  background-color: gold;
 }
 
 .projectsContainer > h1{
@@ -570,7 +572,7 @@ body {
 .project:hover img{
   box-shadow: 1px 1px 10px white;
   border-radius: 30px;
-
+  cursor: pointer
 }
 
 .project > img{
