@@ -486,6 +486,14 @@ body {
 }
 /*mobile about page*/
 @media only screen and (max-device-width: 480px) {
+  #myPicWrapper{
+    flex-direction:column;
+    background-color: white;
+    width: 0%;
+    min-width: 0px;
+    height: 100px;
+    margin: auto;
+  }
 
 }
 /*project page content*/
