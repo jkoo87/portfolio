@@ -494,16 +494,22 @@ body {
   #myPicWrapper{
     display: none;
   }
+  .aboutContainer{
+
+  }
   #myPicWrapperMobile{
-    display:block;
-    position: absolute;
+    margin-top: 200px;
+    display:unset;
     bottom: 50px;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
   }
   .brandStatement {
-    margin-top: -300px;
+    margin-top: 300px;
     font-size: 60px;
-    z-index: 999;
+    margin: auto;
+    width: 100%;
+    padding: 30px 30px 40px 30px ;
   }
   .mobileWrapperOne{
     display: inline-block;
@@ -514,8 +520,8 @@ body {
   #nameTitleMobile{
     font-size: 2em;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0 40px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px 40px;
     font-weight: bold;
   }
   #contactIconsMobile{
