@@ -180,7 +180,7 @@ $(()=> {
         $("#about > a, #projects > a, #contact > a").fadeOut(1000);
         $("#contactIcons").fadeIn();
         $(".menuButton").animate( { "opacity": 1} , 500 )
-        $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px",  } , 500 )
+        $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px"  } , 500 )
         $(".aboutContainer").delay(1300).fadeIn(1000)
 
     })
