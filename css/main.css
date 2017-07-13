@@ -95,21 +95,26 @@ body {
 }
 /*Title page-background motion box*/
 #boxMain{
-  width: 100%;
-  height: 100%;
+  /*width: 100%;
+  height: 100%;*/
   margin: 100px: auto;
-  perspective: 800px;
+  /*perspective: 800px;
+  -webkit-perspective: 800px;
+  -ms-perspective: 800px;
   position: absolute;
   right: -400px;
-  bottom: -500px;
+  bottom: -500px;*/
   filter: blur(0px);
   animation: smokeEffect 2s forwards;
+  /*-webkit-animation: smokeEffect 2s forwards;*/
 }
 
 #boxDiv{
   width: 100%;
+  /*-webkit-transform-style: preserve-3d;*/
   transform-style: preserve-3d;
   animation: rotate 30s linear infinite;
+  /*-webkit-animation: rotate 30s linear infinite;*/
 }
 
 #boxDiv div{
@@ -123,53 +128,54 @@ body {
 }
 #front {
   transform: translateZ(75px) translateZ(105px);
-  -webkit-transform: translateZ(75px) translateZ(105px);
+  /*-webkit-transform: translateZ(75px) translateZ(105px);*/
   background: black;
 }
 #back {
   transform: rotateY(90deg) translateZ(175px);
-  -webkit-transform: rotateY(90deg) translateZ(175px);
+  /*-webkit-transform: rotateY(90deg) translateZ(175px);*/
   background: #101010;
 }
 #left {
   transform: rotateY(0deg) translateX(-275px);
-  -webkit-transform: rotateY(0deg) translateX(-275px);
+  /*-webkit-transform: rotateY(0deg) translateX(-275px);*/
   transform-origin: left;
-  -webkit-transform-origin: left;
+  /*-webkit-transform-origin: left;*/
   background: black;
 }
 #right {
   transform: rotateY(0deg) translateX(425px);
-  -webkit-transform: rotateY(0deg) translateX(425px);
+  /*-webkit-transform: rotateY(0deg) translateX(425px);*/
   transform-origin: right;
-  -webkit-transform-origin: right;
+  /*-webkit-transform-origin: right;*/
   background: #101010;
 }
 #top {
   transform: rotateX(-0deg) translateY(-275px);
-  -webkit-transform: rotateX(-90deg) translateY(-275px);
+  /*-webkit-transform: rotateX(-90deg) translateY(-275px);*/
   transform-origin: top;
-  -webkit-transform-origin: top;
+  /*-webkit-transform-origin: top;*/
   background: black;
 }
 #bottom {
   transform: rotateX(-90deg) translateY(75px);
-  -webkit-transform: rotateX(-90deg) translateY(75px);
+  /*-webkit-transform: rotateX(-90deg) translateY(75px);*/
   transform-origin: bottom;
-  -webkit-transform-origin: bottom;
+  /*-webkit-transform-origin: bottom;*/
   background: #101010;
 }
 
 @keyframes rotate{
   from{
     transform: rotateY(0) rotateX(0) ;
-    -webkit-transform: rotateY(0) rotateX(0) ;
+    /*-webkit-transform: rotateY(0) rotateX(0) ;*/
   }
   to {
     transform: rotateY(360deg) rotateX(-360deg)  ;
-    -webkit-transform: rotateY(360deg) rotateX(-360deg)  ;
+    /*-webkit-transform: rotateY(360deg) rotateX(-360deg)  ;*/
   }
 }
+
 .titleButton{
   text-shadow: -2px -1px 1px #000066;
   animation: titleButtonLight 0.9s 30;
@@ -249,7 +255,6 @@ body {
   }
 
   #boxMain{
-    position: absolute;
     right: -300px;
     top: 900px;
   }

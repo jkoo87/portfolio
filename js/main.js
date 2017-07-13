@@ -67,8 +67,8 @@ $(()=> {
         "transition-duration": "0.5s"
       });
       $(".titleContainer").css({
-        transform: "perspective( 800px ) rotateY(375deg) rotateZ(-2deg)",
-        "-webkit-transform": "perspective( 800px ) rotateY(375deg) rotateZ(-2deg)",
+        transform: "perspective(800px) rotateY(375deg) rotateZ(-2deg)",
+        "-webkit-transform": "perspective(800px) rotateY(375deg) rotateZ(-2deg)",
         "-webkit-transition-duration": "1s",
         "transition-duration": "1s",
       });
@@ -201,40 +201,46 @@ $(()=> {
             $(".project > .projectDescription:not(#projectOne > .projectDescription)").slideUp();
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectOne").offset().top-70});
-                  $("#projectOne > .projectDescription").slideDown();
+                  scrollTop: $("#projects").scrollTop() + $("#projectOne").offset().top-70
+              });
+              $("#projectOne > .projectDescription").slideDown();
             }, 400)
         });
         $("#projectTwo, #projectTwolink").click(()=>{
             $(".project > .projectDescription:not(#projectTwo > .projectDescription)").slideUp();
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectTwo").offset().top-70});
-                  $("#projectTwo > .projectDescription").slideDown();
+                  scrollTop: $("#projects").scrollTop() + $("#projectTwo").offset().top-70
+              });
+              $("#projectTwo > .projectDescription").slideDown();
             }, 400)
            });
         $("#projectThree, #projectThreelink").click(()=>{
             $(".project > .projectDescription:not(#projectThree > .projectDescription)").slideUp();
+
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectThree").offset().top-70});
-                  $("#projectThree > .projectDescription").slideDown();
+                  scrollTop: $("#projects").scrollTop() + $("#projectThree").offset().top-70
+              });
+              $("#projectThree > .projectDescription").slideDown();
             }, 400)
         });
         $("#projectFour, #projectFourlink").click(()=>{
             $(".project > .projectDescription:not(#projectFour > .projectDescription)").slideUp();
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectFour").offset().top-70});
-                  $("#projectFour > .projectDescription").slideDown();
+                  scrollTop: $("#projects").scrollTop() + $("#projectFour").offset().top-70
+              });
+              $("#projectFour > .projectDescription").slideDown();
             }, 400)
         });
         $("#projectFive, #projectFivelink").click(()=>{
             $(".project > .projectDescription:not(#projectFive > .projectDescription)").slideUp();
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectFive").offset().top-70});
-                  $("#projectFive > .projectDescription").slideDown();
+                  scrollTop: $("#projects").scrollTop() + $("#projectFive").offset().top-70
+              });
+              $("#projectFive > .projectDescription").slideDown();
             }, 400)
         });
 
