@@ -10,6 +10,8 @@ $(()=> {
     $(".titleContainer").css({
       "visibility": "visible"
     });
+    let hasBeenClicked = false
+
 
 
     $(".aboutContainer, .projectsContainer, .contactContainer").hide();
@@ -83,32 +85,43 @@ $(()=> {
           "min-height": "430px"
         });
       }, 1500)
-      setTimeout(()=>{
-        $(".titleContainer").css({
-          transform: "perspective( 800px ) rotateY(400deg) rotateZ(-2deg)",
-          "-webkit-transform": "perspective( 800px ) rotateY(400deg) rotateZ(-2deg)",
-          "-webkit-transition-duration": "30s",
-          "transition-duration": "30s",
-        });
+      if (hasBeenClicked) {
+        $("#boxMain").hide()
+      } else {
+        setTimeout(()=>{
+          $(".titleContainer").css({
+            transform: "perspective( 800px ) rotateY(400deg) rotateZ(-2deg)",
+            "-webkit-transform": "perspective( 800px ) rotateY(400deg) rotateZ(-2deg)",
+            "-webkit-transition-duration": "30s",
+            "transition-duration": "30s",
+          });
 
-        $(fulStack).hide().appendTo("#subName").each(function(i) {
-            $(this).delay(100 * i).fadeIn('slow').addClass('smoke').css({
-                  color: "#CE2121"
-            });
-        });
-      }, 2500)
-      setTimeout(()=>{
-        $("#boxMain").show()
-        $(".titleButton").show()
-        $(".titleButton").css({
-          transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
-          "font-size": "30px"
-        });
-        $(".skipButton").animate( { "opacity": 0} , 500 )
-      }, 3500)
+          $(fulStack).hide().appendTo("#subName").each(function(i) {
+              $(this).delay(100 * i).fadeIn('slow').addClass('smoke').css({
+                    color: "#CE2121"
+              });
+          });
+        }, 2500)
+        setTimeout(()=>{
+          $(".titleButton").show()
+          $(".titleButton").css({
+            transition: "all 1s cubic-bezier(0.03, 0.63, 0.77, 1.21)",
+            "font-size": "30px"
+          });
+          $(".skipButton").animate( { "opacity": 0} , 500 )
+        }, 3500)
+        setTimeout(()=>{
+          $("#boxMain").show()
+        }, 4000)
+      }
     }, 6000);
 
+    $(".logo").click(()=>{
+      hasBeenClicked = false
+    })
+
     $(".titleButton, .skipButton").click(()=>{
+      hasBeenClicked = true
       $(".titleButton, .skipButton, #subName, #myName, #titleSubName, #titleName" ).css({
           "font-size": "0px"
       });
@@ -167,7 +180,6 @@ $(()=> {
         $(".menuButton").animate( { "opacity": 0} , 500 )
         $("#myPicWrapper").animate( { "width": "0%", "min-width": "0px"} )
         $("#contactIcons").fadeOut();
-
     })
 
     $("#about > a").click(()=>{
@@ -182,7 +194,6 @@ $(()=> {
         $(".menuButton").animate( { "opacity": 1} , 500 )
         $("#myPicWrapper").animate( { "width": "40%", "min-width": "300px"  } , 500 )
         $(".aboutContainer").delay(1300).fadeIn(1000)
-
     })
     $("#projects > a").click(()=>{
         $("#projects").animate({
@@ -197,52 +208,25 @@ $(()=> {
 
         //image/navbar on click replace png to gif and show its description
 
-        $("#projectOne, #projectOnelink").click(()=>{
-            $(".project > .projectDescription:not(#projectOne > .projectDescription)").slideUp();
-            setTimeout(()=>{
-              $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectOne").offset().top-70
-              });
-              $("#projectOne > .projectDescription").slideDown();
-            }, 400)
-        });
-        $("#projectTwo, #projectTwolink").click(()=>{
-            $(".project > .projectDescription:not(#projectTwo > .projectDescription)").slideUp();
-            setTimeout(()=>{
-              $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectTwo").offset().top-70
-              });
-              $("#projectTwo > .projectDescription").slideDown();
-            }, 400)
-           });
-        $("#projectThree, #projectThreelink").click(()=>{
-            $(".project > .projectDescription:not(#projectThree > .projectDescription)").slideUp();
+        $(".project, .linkContainer").each(function(){
+          $(this).click((e)=>{
+            let id = ''
+            if (e.target.id !== '') {
+              id = e.target.id.replace('link', '')
+            } else {
+              id = this.id
+            }
+            $(".project").find('.projectDescription').slideUp()
 
             setTimeout(()=>{
               $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectThree").offset().top-70
+                  scrollTop: $("#projects").scrollTop() + $("#"+id).offset().top-70
               });
-              $("#projectThree > .projectDescription").slideDown();
+              $("#"+id).find('.projectDescription').slideDown(400)
             }, 400)
-        });
-        $("#projectFour, #projectFourlink").click(()=>{
-            $(".project > .projectDescription:not(#projectFour > .projectDescription)").slideUp();
-            setTimeout(()=>{
-              $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectFour").offset().top-70
-              });
-              $("#projectFour > .projectDescription").slideDown();
-            }, 400)
-        });
-        $("#projectFive, #projectFivelink").click(()=>{
-            $(".project > .projectDescription:not(#projectFive > .projectDescription)").slideUp();
-            setTimeout(()=>{
-              $("#projects").animate({
-                  scrollTop: $("#projects").scrollTop() + $("#projectFive").offset().top-70
-              });
-              $("#projectFive > .projectDescription").slideDown();
-            }, 400)
-        });
+          })
+        })
+
 
         //on scroll change navbar a class
         function goToByScroll(id){
