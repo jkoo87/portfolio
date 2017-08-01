@@ -290,6 +290,14 @@ $(()=> {
             $("#projectFive > img").attr("src", "./css/img/projects/portfolio.png");
           }
         });
+        $("#projectSix").on({
+        mouseenter: function() {
+            $("#projectSix > img").attr("src", "./css/img/projects/memoryGame.gif");
+          },
+          mouseleave: function() {
+            $("#projectSix > img").attr("src", "./css/img/projects/memoryGame.png");
+          }
+        });
     })
 
 
